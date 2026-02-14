@@ -1,0 +1,12 @@
+[build]
+  command = "yarn build"
+  functions = "dist/functions" # Netlify will look for the compiled JS functions here
+
+[dev]
+  framework = "#static"
+
+# Redirect all traffic to the serverless function
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/api"
+  status = 200
